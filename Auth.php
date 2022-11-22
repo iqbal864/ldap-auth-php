@@ -2,7 +2,7 @@
 // post dari form input
 $username = $this->input->post('username');
 $password = $this->input->post('password');
-$pass = urlencode($password);
+$pass = ldap_escape($password, null, LDAP_ESCAPE_FILTER);
 
 $ldap_host = "ldap://xx.x.x.xx"; // contoh : ldap://10.1.1.10
 $ldap_port = 389;
